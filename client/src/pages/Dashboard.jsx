@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 function Dashboard({ user, onEdit }) {
   // Store applications received from the backend
   const [applications, setApplications] = useState([]);
@@ -31,7 +31,7 @@ function Dashboard({ user, onEdit }) {
 
         // Ask backend for this user's applications
         const response = await fetch(
-          "http://localhost:5000/api/applications",
+          `${API_URL}/api/applications`,
           {
             method: "GET",
             headers: {
@@ -84,7 +84,7 @@ function Dashboard({ user, onEdit }) {
 
       // Send DELETE request to backend
       const response = await fetch(
-        `http://localhost:5000/api/applications/${applicationId}`,
+        `${API_URL}/api/applications/${applicationId}`,
         {
           method: "DELETE",
           headers: {

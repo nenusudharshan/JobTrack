@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 function AddApplication({ onApplicationAdded }) {
 
     // Store all form values
@@ -39,7 +40,7 @@ function AddApplication({ onApplicationAdded }) {
 
             // Send application data to backend
             const response = await fetch(
-                "http://localhost:5000/api/applications",
+                `${API_URL}/api/applications`,
                 {
                     method: "POST",
 

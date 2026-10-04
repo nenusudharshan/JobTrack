@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 function EditApplication({ application, onUpdated, onCancel }) {
 
     // Store the application values in the form
@@ -38,7 +39,7 @@ function EditApplication({ application, onUpdated, onCancel }) {
             const token = localStorage.getItem("token");
 
             const response = await fetch(
-                `http://localhost:5000/api/applications/${application.id}`,
+                `${API_URL}/api/applications/${application.id}`,
                 {
                     method: "PUT",
 
