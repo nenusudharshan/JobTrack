@@ -2,35 +2,68 @@
 
 A full-stack web application for managing and tracking job and internship applications in one place.
 
-## Overview
+## 🚀 Live Demo
 
-JobTrack helps students and job seekers organize their application process by keeping company details, job roles, application dates, statuses, job links, and notes in a single dashboard.
+**Live Application:**  
+https://jobtrack-frontend-ytki.onrender.com
 
-Instead of maintaining applications across spreadsheets, notes, or multiple browser tabs, JobTrack provides a centralized application tracking system.
+**Backend API:**  
+https://jobtrack-backend-s8u8.onrender.com
 
-## Features
+---
 
+## 📌 Overview
+
+JobTrack is a full-stack job and internship application tracking system designed to help students and job seekers organize their job search.
+
+Instead of maintaining applications across spreadsheets, notes, or multiple browser tabs, JobTrack provides a centralized dashboard where users can manage application details, track progress, and monitor their overall job search.
+
+---
+
+## ✨ Features
+
+### Authentication
 - User registration and login
-- Secure password hashing using bcrypt
 - JWT-based authentication
-- Add job and internship applications
-- View all applications in a dashboard
-- Edit existing applications
-- Delete applications
-- Search applications by company, role, or location
-- Filter applications by status
-- Filter applications by job type
-- Dashboard statistics
-- Application status badges
-- Job posting links
-- Responsive dark-themed UI
+- Secure password hashing using bcrypt
 - Protected application APIs
 - User-specific application data
 
-## Tech Stack
+### Application Management
+- Add job/internship applications
+- View all applications
+- Edit application details
+- Delete applications
+- Track application date
+- Store job posting URLs
+- Add personal notes
+
+### Search & Filtering
+- Search by company
+- Search by role
+- Search by location
+- Filter by application status
+- Filter by job type
+
+### Dashboard
+- Total applications
+- Interview count
+- Selected applications
+- Application status indicators
+- Organized application cards
+
+### UI
+- Responsive design
+- Dark-themed modern interface
+- Form validation
+- Success and error messages
+- Responsive layout for different screen sizes
+
+---
+
+## 🛠️ Tech Stack
 
 ### Frontend
-
 - React
 - JavaScript
 - HTML
@@ -38,38 +71,43 @@ Instead of maintaining applications across spreadsheets, notes, or multiple brow
 - Vite
 
 ### Backend
-
 - Node.js
 - Express.js
 - REST APIs
 - JWT
 - bcryptjs
+- CORS
 
 ### Database
-
 - MySQL
 
-### Development Tools
+### Deployment
+- Render — Frontend
+- Render — Backend
+- Aiven — MySQL Database
 
+### Development Tools
 - VS Code
 - Git
 - GitHub
+- MySQL Workbench
 - Thunder Client
 
-## Application Architecture
+---
+
+## 🏗️ Architecture
 
 ```text
                     JobTrack
                        |
-             +---------+---------+
-             |                   |
-        Frontend             Backend
-          React             Node.js
-             |              Express.js
-             |                   |
-             +-------- HTTP -----+
-                       |
-                    REST API
+              +--------+--------+
+              |                 |
+          Frontend           Backend
+           React          Node.js + Express
+              |                 |
+              |     REST API    |
+              +--------HTTP-----+
                        |
                     MySQL
-                    Database
+                       |
+                    Aiven
